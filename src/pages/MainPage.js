@@ -53,7 +53,7 @@ class HomepageHeading extends Component {
           />
           <Header
             as="h2"
-            content="지금 바로 시작해보세요!"
+            content="지금 바로 시작해보세요."
             inverted
             style={{
               fontSize: mobile ? '1.5em' : '1.7em',
