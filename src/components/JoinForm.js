@@ -21,6 +21,7 @@ export default class JoinForm extends React.Component {
   passwordRef = React.createRef();
 
   handleLoginClick = async e => {
+    console.log('click');
     e.preventDefault();
     const { onJoin } = this.props;
     await onJoin(
@@ -31,7 +32,9 @@ export default class JoinForm extends React.Component {
   };
 
   getFiles(files) {
-    this.setState({ files: files });
+    this.setState({
+      files: files,
+    });
     console.log(this.state);
   }
 
@@ -43,13 +46,13 @@ export default class JoinForm extends React.Component {
       <Grid columns="equal">
         <Grid.Column />
         <Grid.Column width={5}>
-          <span className="copyright">협업이 즐거워지는 Project++</span>
+          <span className="copyright"> 협업이 즐거워지는 Project++ </span>{' '}
           <Segment className="container" color="blue" textAlign="center">
             <div>
               <div className="column">
                 <h2 className="ui white image header">
-                  <div className="content">회원가입</div>
-                </h2>
+                  <div className="content"> 회원가입 </div>{' '}
+                </h2>{' '}
                 <form className="ui form">
                   <div className="ui stacked segment">
                     <div className="field">
@@ -61,8 +64,8 @@ export default class JoinForm extends React.Component {
                           placeholder="계정을 입력해주세요"
                           required
                         />
-                      </div>
-                    </div>
+                      </div>{' '}
+                    </div>{' '}
                     <div className="field">
                       <div className="ui left icon input">
                         <i className="lock icon" />
@@ -72,32 +75,32 @@ export default class JoinForm extends React.Component {
                           placeholder="패스워드를 입력해주세요"
                           required
                         />
-                      </div>
-                    </div>
+                      </div>{' '}
+                    </div>{' '}
                     <div className="field">
                       <div className="ui left icon input">
                         <i className="picture icon" />
                         <FileBase64
                           multiple={true}
                           onDone={this.getFiles.bind(this)}
-                        />
-                      </div>
-                    </div>
+                        />{' '}
+                      </div>{' '}
+                    </div>{' '}
                     <button
                       onClick={this.handleLoginClick}
                       className="ui fluid large blue submit button"
                     >
-                      회원가입 하기
-                    </button>
-                  </div>
-                </form>
+                      회원가입 하기{' '}
+                    </button>{' '}
+                  </div>{' '}
+                </form>{' '}
                 <div className="ui message">
-                  계정이 있으신가요? <Link to="/login">로그인하기</Link>
-                </div>
-              </div>
-            </div>
-          </Segment>
-        </Grid.Column>
+                  계정이 있으신가요 ? <Link to="/login"> 로그인하기 </Link>{' '}
+                </div>{' '}
+              </div>{' '}
+            </div>{' '}
+          </Segment>{' '}
+        </Grid.Column>{' '}
         <Grid.Column />
       </Grid>
     );
